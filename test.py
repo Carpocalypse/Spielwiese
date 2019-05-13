@@ -108,35 +108,35 @@ if __name__ == '__main__':
 
 while 1:
 	if get_cpu_temp() >= 60:
-		GPIO.output(LED_RED,GPIO.HIGH)
-		GPIO.output(LED_GREEN, GPIO.LOW)
-		GPIO.output(LED_YELLOW, GPIO.LOW)
+#		GPIO.output(LED_RED,GPIO.HIGH)
+#		GPIO.output(LED_GREEN, GPIO.LOW)
+#		GPIO.output(LED_YELLOW, GPIO.LOW)
 		GPIO.output(NPN, GPIO.HIGH)
 		Luefter_on = 1
 #		time.sleep(120)
 	elif get_cpu_temp() >= 45 and get_cpu_temp() < 60:
-		if get_cpu_temp() >= 50:
-			GPIO.output(LED_YELLOW, GPIO.HIGH)
-			GPIO.output(LED_GREEN, GPIO.LOW)
-		else:
-			GPIO.output(LED_YELLOW, GPIO.LOW)
-			GPIO.output(LED_GREEN, GPIO.HIGH)
-		GPIO.output(LED_RED, GPIO.LOW)
+#		if get_cpu_temp() >= 50:
+#			GPIO.output(LED_YELLOW, GPIO.HIGH)
+#			GPIO.output(LED_GREEN, GPIO.LOW)
+#		else:
+#			GPIO.output(LED_YELLOW, GPIO.LOW)
+#			GPIO.output(LED_GREEN, GPIO.HIGH)
+#		GPIO.output(LED_RED, GPIO.LOW)
 		if Luefter_on == 1:
 			GPIO.output(NPN, GPIO.HIGH)
 		elif Luefter_on ==0:
 			GPIO.output(NPN, GPIO.LOW)
 	elif get_cpu_temp() <= 45.000:
-		GPIO.output(LED_GREEN, GPIO.HIGH)
-		GPIO.output(LED_YELLOW, GPIO.LOW)
-		GPIO.output(LED_RED, GPIO.LOW)
+#		GPIO.output(LED_GREEN, GPIO.HIGH)
+#		GPIO.output(LED_YELLOW, GPIO.LOW)
+#		GPIO.output(LED_RED, GPIO.LOW)
 		GPIO.output(NPN, GPIO.LOW)
 		Luefter_on = 0
 	else :
-		print "keines von alle dem"
-		GPIO.output(LED_GREEN, GPIO.HIGH)
-		GPIO.output(LED_YELLOW, GPIO.HIGH)
-		GPIO.output(LED_RED, GPIO.HIGH)
+#		print "keines von alle dem"
+#		GPIO.output(LED_GREEN, GPIO.HIGH)
+#		GPIO.output(LED_YELLOW, GPIO.HIGH)
+#		GPIO.output(LED_RED, GPIO.HIGH)
 		GPIO.output(NPN, GPIO.HIGH)
 
 	lcd_write_byte(LCD_LINE_1, LCD_CMD)
